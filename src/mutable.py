@@ -1,3 +1,4 @@
+#Author: Li Xiang
 class HashMap(object):
     def __init__(self, T=[], size=0):
         if len(T) == 0:

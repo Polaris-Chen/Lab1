@@ -1,4 +1,4 @@
-
+#Author: ChenZhengHui
 class HashMap(object):
 
     __a=()
