@@ -1,5 +1,5 @@
 import unittest
-from immutable import HashMap
+from src.immutable import HashMap
 
 
 
