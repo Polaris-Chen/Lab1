@@ -1,5 +1,5 @@
-##Laboratory 1
-###list of group members:
+## Laboratory 1
+### list of group members:
 Name:Chen ZhengHui  id:192050190
 
 Name:Li Xiang  id:192050189
