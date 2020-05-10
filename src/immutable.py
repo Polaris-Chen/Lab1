@@ -73,15 +73,23 @@ class HashMap(object):
     def to_list(self):
         return list(self.__a)
 
+###### 5.10 update  ##########
     def from_list(self,ListExample):
-        self.clear()
-        for i in range(len(ListExample)):
-            if ListExample[i] is not  None:
-                self.add(ListExample[i])
-        return self.__a
+        self.__a=tuple(ListExample)
+        return self
+
+        #self.clear()
+        #for i in range(len(ListExample)):
+         #   if ListExample[i] is not  None:
+          #      self.add(ListExample[i])
+        #return self.__a
+
+######## update end ###############
 
     def getValue(self, num):
-        return self.__a[num]
+        if(num<self.__hashmaplength):
+            return self.__a[num]
+        return "out fo length"
 
     def isContain(self, value):
         index = value % len(self.__a)
@@ -91,6 +99,35 @@ class HashMap(object):
             else:
                 return True
         return False
+
+###### 5.10 update  ##########
+    def find(self,value):
+        if(self.isContain(value)):
+
+            for x in range(self.__hashmaplength):
+                if(self.__a[x]==value) :
+                    return x
+        else:
+            return "No value"
+
+    def filiter(self,value):
+        temp = list(self.__a)
+        for x in range(len(temp)):
+            if temp[x]==value:
+                temp[x]=None
+        self.__a=tuple(temp)
+        return self.__a
+
+    def mconcat(self,b):
+        if self.__hashmaplength == 0:
+            return b
+        else:
+            temp=self.__a+b
+            self.__a=temp
+            return  temp
+
+######## update end ###############
+
     def map(self,f):
         temp=list(self.geta())
         for i in range(self.getLength()):
