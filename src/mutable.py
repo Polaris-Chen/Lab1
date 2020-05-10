@@ -50,10 +50,11 @@ class HashMap(object):
         if len(a) == 0:
             self.T = HashMap().T
             self.size = HashMap().size
+            return HashMap()
         else:
             self.T = HashMap(a, len(a)).T
             self.size = HashMap(a, len(a)).size
-        return self.T
+            return HashMap(a, len(a))
 
     def hash_find(self, k):
         i = 0
