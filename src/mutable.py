@@ -40,13 +40,19 @@ class HashMap(object):
     def hash_to_list(self):
         res = []
         i = 0
-        while i < self.size:
+        while i<self.size:
             res.append(self.T[i])
             i += 1
         return res
 
     def hash_from_list(self, a):
-        self.T = HashMap(a, len(a))
+
+        if len(a) == 0:
+            self.T = HashMap().T
+            self.size = HashMap().size
+        else:
+            self.T = HashMap(a, len(a)).T
+            self.size = HashMap(a, len(a)).size
         return self.T
 
     def hash_find(self, k):
