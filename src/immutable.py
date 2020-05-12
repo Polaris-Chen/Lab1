@@ -33,8 +33,10 @@ class HashMap(object):
         return num
 
     def clear(self):
+        if self.getLength()==0:
+            return
         temp=list(self.geta())
-        #print(len(temp))
+        print(len(temp))
         for i in range(self.getLength()):
            temp[i]=None
         self.__a=tuple(temp)
