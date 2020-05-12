@@ -22,8 +22,9 @@ class TestHashMap(unittest.TestCase):
 #######  property  __Length  test #########
 
     def test_length(self):
+        newtest=HashMap()
         self.test.clear()
-        self.assertEqual(self.test.getLength(), 10)
+        self.assertEqual(newtest.getLength(), 0)
 
 ##########  size() test ###############
     def test_size(self):

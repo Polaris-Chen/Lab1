@@ -10,7 +10,7 @@ class HashMap(object):
     def getLength(self):
         return self.__hashmaplength
 
-    def __init__(self,hashmaplength):
+    def __init__(self,hashmaplength=0):
 
         self.__hashmaplength=hashmaplength
         temp = []
@@ -22,6 +22,8 @@ class HashMap(object):
 
     def size(self):
         if self == None:
+            return 0
+        if self.getLength()==0:
             return 0
         num = 0
         #print(len(self.a))
@@ -110,7 +112,7 @@ class HashMap(object):
         else:
             return "No value"
 
-    def filiter(self,value):
+    def filter(self,value):
         temp = list(self.__a)
         for x in range(len(temp)):
             if temp[x]==value:
