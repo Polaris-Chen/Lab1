@@ -112,10 +112,10 @@ class TestHashMap(unittest.TestCase):
         self.test.add(2).add(4)
         self.assertEqual(self.test.mconcat((10,11)),(None,None,2,None,4,None,None,None,None,None,10,11))
 
-    a = [1, 2, 3]
+    a = [1, 2, 3,4,5]
     @given(st.lists(st.integers()))
-    def test__a_from_list_to_list_equality(self, a):
-        self.test.clear()
+    def test_zzzz_from_list_to_list_equality(self, a):
+        #self.test.clear()
         self.assertEqual(self.test.from_list(a).to_list(), a)
 
 

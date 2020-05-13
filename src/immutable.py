@@ -78,7 +78,7 @@ class HashMap(object):
     def to_list(self):
         return list(self.__a)
 
-###### 5.10 update  ##########
+
     def from_list(self,ListExample):
         self.__a=tuple(ListExample)
         return self
@@ -89,7 +89,7 @@ class HashMap(object):
           #      self.add(ListExample[i])
         #return self.__a
 
-######## update end ###############
+
 
     def getValue(self, num):
         if(num<self.__hashmaplength):
@@ -106,7 +106,7 @@ class HashMap(object):
                 return True
         return False
 
-###### 5.10 update  ##########
+
     def find(self,value):
         if(self.isContain(value)):
 
@@ -132,7 +132,7 @@ class HashMap(object):
             self.__a=temp
             return  temp
 
-######## update end ###############
+
 
     def map(self,f):
         temp=list(self.geta())
@@ -156,6 +156,3 @@ class HashMap(object):
     def iterator(self):
 
         return self.__a
-
-
-
