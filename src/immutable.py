@@ -93,7 +93,7 @@ class HashMap(object):
 
     def getValue(self, num):
         if(num<self.__hashmaplength):
-            print(num)
+
             return self.__a[num]
         return "out fo length"
 
