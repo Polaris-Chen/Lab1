@@ -14,6 +14,8 @@ class TestHashMap(unittest.TestCase):
 
 #####    property  __a  test #########
 
+
+
     def test_a(self):
         self.test.clear()
         self.assertEqual(self.test.geta(),(None,None,None,None,None,None,None,None,None,None) )
@@ -22,10 +24,10 @@ class TestHashMap(unittest.TestCase):
 #######  property  __Length  test #########
 
     def test_length(self):
-        newtest=HashMap()
+        newtest = HashMap()
         self.test.clear()
         self.assertEqual(newtest.getLength(), 0)
-
+    #
 
     def test_size(self):
         self.test.clear()
@@ -34,17 +36,12 @@ class TestHashMap(unittest.TestCase):
         self.assertEqual(self.test.add(5).size(), 1)
 
 
+    #
     def test_add(self):
         self.test.clear()
         self.assertEqual(self.test.add(5).geta(),(None,None,None,None,None,5,None,None,None,None))
         self.test.clear()
         self.assertEqual(self.test.add(5).add(6).add(16).geta(), (None, None, None, None, None,5, 6, 16, None, None))
-
-
-    def test_remove(self):
-        self.test.clear()
-        self.assertEqual(self.test.add(5).remove(5).geta(), (None, None, None, None, None, None, None, None, None, None))
-
 
     def test_getValue(self):
         self.test.clear()
@@ -52,7 +49,12 @@ class TestHashMap(unittest.TestCase):
         self.test.clear()
         self.assertEqual(self.test.add(5).add(6).getValue(6), 6)
 
+    def test_remove(self):
+        self.test.clear()
+        self.assertEqual(self.test.add(6).remove(6).geta(), (None, None, None, None, None, None, None, None, None, None))
 
+
+    #
     def test_isContain(self):
         self.test.clear()
         self.assertEqual(self.test.add(5).isContain(5), True)
@@ -66,9 +68,10 @@ class TestHashMap(unittest.TestCase):
         self.assertEqual(self.test.add(5).to_list(), [None,None,None,None,None,5,None,None,None,None])
 
 
-    def test_from_list(self):
+    def test_zzzzz_from_list(self):
         self.test.clear()
-        self.assertEqual(self.test.from_list([1,3,4]).geta(), (1,3,4))
+        temp=[1,2,3]
+        self.assertEqual(self.test.from_list(temp).geta(), (1,2,3))
 
 
 
@@ -78,7 +81,7 @@ class TestHashMap(unittest.TestCase):
         self.test.clear()
         self.assertEqual(self.test.add(2).add(4).map(f=pow2), (None, None, 4, None, 16, None, None, None, None, None))
 
-
+    #
     def test_reduce(self):
         def sum(x,y):
             return x+y
@@ -97,21 +100,22 @@ class TestHashMap(unittest.TestCase):
         self.test.clear()
         self.assertEqual(self.test.iterator(), (None,None,None,None,None,None,None,None,None,None))
 
-
+    #
     def test_filiter(self):
         self.test.clear()
         self.test.add(2).add(5).add(7)
         self.assertEqual(self.test.filter(5),(None,None,2,None,None,None,None,7,None,None))
 
-
-    def test_mconcat(self):
+    #
+    def test_zzz_mconcat(self):
         self.test.clear()
         self.test.add(2).add(4)
-        self.assertEqual(self.test.mconcat((10,11,12)),(None,None,2,None,4,None,None,None,None,None,10,11,12))
+        self.assertEqual(self.test.mconcat((10,11)),(None,None,2,None,4,None,None,None,None,None,10,11))
 
     a = [1, 2, 3]
     @given(st.lists(st.integers()))
-    def test_from_list_to_list_equality(self, a):
+    def test__a_from_list_to_list_equality(self, a):
+        self.test.clear()
         self.assertEqual(self.test.from_list(a).to_list(), a)
 
 

@@ -36,8 +36,9 @@ class HashMap(object):
         if self.getLength()==0:
             return
         temp=list(self.geta())
-        print(len(temp))
-        for i in range(self.getLength()):
+
+        for i in range(len(temp)):
+           #print(i)
            temp[i]=None
         self.__a=tuple(temp)
 
@@ -92,6 +93,7 @@ class HashMap(object):
 
     def getValue(self, num):
         if(num<self.__hashmaplength):
+            print(num)
             return self.__a[num]
         return "out fo length"
 
